@@ -1,4 +1,5 @@
-def getRes(total_steps): 
+def getRes(total_steps):
+    flameMap = {'F':'friends','L':'lovers','A':'affection','M':'marriage','E':'enemies','S':'sex'} 
     flames = ['F','L','A','M','E','S'] 
     start = 0
     while len(flames) > 1:
@@ -6,7 +7,7 @@ def getRes(total_steps):
         start = indextopop%len(flames)
         flames.pop(indextopop)
     
-    return flames
+    return flameMap[flames[0]]
 
 def flames(n1, n2):
     if len(n1) > len(n2):
@@ -23,15 +24,13 @@ def flames(n1, n2):
 
     total  = int(len(stack1) + len(stack2))
 
-    print(f'{total}\n')
-
     res = getRes(total)
 
     return res
 
-print("~~FLAMES~~")
-n1 = input("Enter Name 1 : ")
-n2 = input("Enter Name 2 : ")
+print("~~flames~~")
+n1 = input("enter a name : ")
+n2 = input("another one  : ")
 
 res = flames(n1,n2)
 
